@@ -1,6 +1,8 @@
 let grid = document.querySelector(".grid")
 const buttontn = document.getElementById("start")
 const scoreEl = document.getElementById("score") 
+const moveSound = new Audio('move.mp3');
+const gameOverSound = new Audio('music_gameover.mp3');
 let squares = []
 let currentSnake = [2,1,0]  
 let direction = 1
@@ -34,7 +36,8 @@ function move() {
         (currentSnake[0] - width < 0 && direction === -width) ||
         squares[currentSnake[0] + direction].classList.contains('snake')
     )
-     return clearInterval(time)
+     return clearInterval(time) 
+  
    
     const tail = currentSnake.pop()
     squares[tail].classList.remove('snake')
@@ -44,6 +47,7 @@ function move() {
     if(squares[currentSnake[0]].classList.contains('apple'))
     {
         squares[currentSnake[0]].classList.remove('apple')
+        moveSound.play();
 
         random()
 
@@ -60,6 +64,7 @@ function startGame() {
    
     currentSnake.forEach(index => squares[index].classList.remove('snake'))
     squares[appleIndex].classList.remove('apple')
+  
     clearInterval(time)
     currentSnake = [2,1,0]
     score = 0
