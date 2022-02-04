@@ -1,10 +1,11 @@
 
 This is a Basic Game of snake game
 
+how to play:
+* Click on start game 
+* use the up arrow and down arrow
+
 Instructions:
+   * If you hit the wall out of game
+   * if head touch tail out of game
 
-If you hit the wall you loose
-if head touch tail you loose
-
-
-1.)Click on start game 2.)use the up arrow and down arroe
